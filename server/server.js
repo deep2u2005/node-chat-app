@@ -19,6 +19,16 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('User was disconnected');
     });
+
+    socket.on('createMsg', (message) => {
+        console.log('createMsg', message);
+    });
+
+    socket.emit('newMsg', {
+        from: 'sam',
+        msg: 'Hey, how are you?',
+        createdAt: 123
+    });
 });
 
 server.listen(port, () => {
