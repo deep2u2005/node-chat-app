@@ -2,7 +2,7 @@ const express = require('express');
 const http = require('http');
 const path = require('path');
 const socketIO = require('socket.io');
-
+const {generateMessage} = require('./utils/message');
 const publicPath = path.join(__dirname, '/../public');
 
 var port = process.env.PORT || 3000;
@@ -20,14 +20,17 @@ io.on('connection', (socket) => {
         console.log('User was disconnected');
     });
 
+    socket.emit('newMsg', generateMessage('Admin', 'Welcome to Node Chat App'));
+
+    socket.broadcast.emit('newMsg', generateMessage('Admin', 'New user joined'));
+
     socket.on('createMsg', (message) => {
         console.log('createMsg', message);
-    });
-
-    socket.emit('newMsg', {
-        from: 'sam',
-        msg: 'Hey, how are you?',
-        createdAt: 123
+        io.emit('newMsg', generateMessage(message.from, message.msg));
+        // socket.broadcast.emit('newMsg', {
+        //     from: message.from,
+        //     msg: message.msg
+        // });
     });
 });
 

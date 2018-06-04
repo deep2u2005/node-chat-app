@@ -3,11 +3,6 @@ var socket = io();
 socket.on('connect', function () {
     console.log('connected to the server');
 
-    socket.emit('createMsg', {
-        from: 'ravi',
-        msg: 'Hey, I am good, how are you?'
-    });
-
 });
 
 socket.on('disconnect', function () {
@@ -18,5 +13,8 @@ socket.on('newMsg', function (msg) {
     console.log('newMsg: ', msg);
 });
 
+socket.on('chtMsg', function (msg) {
+    console.log('chtMsg: ', msg);
+});
 
 
