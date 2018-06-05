@@ -83,28 +83,24 @@ socket.on('newLocationMsg', function (message) {
 });
 
 var msgButton = $('#btnMsg');
-
+//emojionearea-editor msg-box
 $('#msg-box').on('submit', function (e) {
     e.preventDefault();
 
     msgButton.text('Sending..');
 
     var messageTextBox = $('[name=message]');
+    var emojiArea = $('.emojionearea-editor');
     socket.emit('createMsg', {
         msg: messageTextBox.val()
     }, function () {
         messageTextBox.val('');
+        emojiArea.text('');
         msgButton.text('Send');
     });
 });
 
-
 var locationButton = $('#geo-location');
-
-// msgButton.on('click', function (e) {
-//     e.preventDefault();
-// });
-
 
 
 locationButton.on('click', function (e) {

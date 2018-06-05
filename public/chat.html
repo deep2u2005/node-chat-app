@@ -9,10 +9,11 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/emojionearea.min.css">
     <title>Chat | Node chat app</title>
 </head>
 
-<body>
+<body id="chatBody">
     <div class="container">
         <h1>
             Node Chat App
@@ -32,16 +33,16 @@
                 <h4>
                     Chat window
                 </h4>
-             
+
                 <div id="divChtScrn" class="form-control border border-primary" style="overflow-y:scroll;height: 350px;">
                     <ul id="messages"></ul>
                 </div>
-               
+
                 <form id="msg-box">
                     <textarea if="message" autofocus autocomplete="off" name="message" type="text" placeholder="Message" class="form-control border border-primary"></textarea>
                     <br>
-                    <button id="btnMsg" class="btn btn-outline-primary">Send</button>
-                    <button id="geo-location" class="btn btn-outline-primary">Send Location</button>
+                    <button id="btnMsg" class="btn btn-primary">Send</button>
+                    <button id="geo-location" class="btn btn-primary">Send Location</button>
                 </form>
             </div>
         </div>
@@ -49,19 +50,17 @@
     <script id="msgTemplate" type="text/template">
         <li class="message">
             <div class="message__title">
-                <strong>{{from}}</strong>
-                <em>{{createdAt}}</em>
+                <strong>{{ from }}</strong>:  <em>{{createdAt}}</em>
             </div>
             <div class="message__body">
-                <p>{{msg}}</p>
+                <p>{{ msg }}</p>
             </div>
         </li>
     </script>
     <script id="locationmsgTemplate" type="text/template">
         <li class="message">
             <div class="message__title">
-                    <strong>{{from}}</strong>
-                    <em>{{createdAt}}</em>
+                <strong>{{ from }} : </strong>  <em>{{createdAt}}</em>
             </div>
             <div class="message__body">
                 <p>
@@ -80,6 +79,15 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="./js/libs/emojionearea.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("[name=message]").emojioneArea({
+                editor: false
+            });
+        });
+    </script>
 </body>
 
 </html>

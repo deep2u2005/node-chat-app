@@ -5,11 +5,11 @@ ul {
    text-align: center; 
    color: wheat
   }
-.index-body{
+/* .index-body{
   background: #007BFF;
-}
+} */
   .index-container{
-    padding-top: 100px;
+    padding-top: 80px;
    
   }
   .row.justify-content-md-center div.col-md-4{
@@ -21,3 +21,18 @@ ul {
     border-radius: 1em;  
     box-shadow: 2px 2px blue;
   }
+#divOnline, #divChtScrn {
+  background-color: #EFF5D3;
+}
+body{
+  /* background-image: url('./../img/background-city.jpg'); */
+  background-image: url('./../img/background-WC.jpg');
+  opacity: 70;
+}
+.message{
+  background-color:  lightgray;
+  border-width: 3;
+  border-color: #007BFF;
+  border-radius: .3em;
+}
+ /* https://www.planwallpaper.com/static/images/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg */
