@@ -9,74 +9,34 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>node-chat-app</title>
+    <title>Join | Node chat app</title>
 </head>
 
-<body>
-    <div class="container">
-        <h1>
-            Node Chat App
-        </h1>
-        <hr>
-        <div class="row">
-            <div class="col-md-4">
-                <h4>
-                    Online
-                </h4>
-                <div id="divOnline" class="form-control border border-primary" style="height: 500px; width: 70%">
-                    <strong class="text-primary">Users</strong>
-                    <ol id="users"></ol>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <h4>
-                    Chat window
-                </h4>
-                <hr>
-                <div id="divChtScrn" class="form-control border border-primary" style="overflow-y:scroll;height: 350px;">
-                    <ul id="messages"></ul>
-                </div>
-                <hr>
-                <form id="message-form">
-                    <textarea if="message" autofocus autocomplete="off" name="message" type="text" placeholder="Message" class="form-control border border-primary"></textarea>
-                    <br>
-                    <button class="btn btn-outline-primary">Send</button>
-                    <button id="geo-location" class="btn btn-outline-primary">Send Location
-
-                    </button>
+<body class="index-body">
+    <h1 class="index-headning">Welcome to Node Chat App</h1>
+    <div class="container index-container">
+        <div class="row justify-content-md-center align-items-center">
+            <div class="col-md-4 border border-primary">
+                <form action="/chat.html">
+                    <div class="form-group">
+                        <h3>Join a Chat</h3>
+                    </div>
+                    <div class="form-group">
+                        <label>Display Name</label>
+                        <input type="text" name="name" autofocus class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Room Name</label>
+                        <input type="text" name="room" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-primary btn-block">Join</button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-    <script id="msgTemplate" type="text/template">
-        <li class="message">
-            <div class="message__title">
-                <strong>{{from}}</strong>
-                <em>{{createdAt}}</em>
-            </div>
-            <div class="message__body">
-                <p>{{msg}}</p>
-            </div>
-        </li>
-    </script>
-    <script id="locationmsgTemplate" type="text/template">
-        <li class="message">
-            <div class="message__title">
-                    <strong>{{from}}</strong>
-                    <em>{{createdAt}}</em>
-            </div>
-            <div class="message__body">
-                <p>
-                    <a href="{{url}}" target="_blank"><i class="fa fa-map-marker" style="font-size:36px"></i>My Current Location</a>
-                </p>
-            </div>
-        </li>
-    </script>
-    <script src="/socket.io/socket.io.js"></script>
     <script src="./js/libs/jquery-3.3.1.js"></script>
-    <script src="./js/libs/moment.js"></script>
-    <script src="./js/libs/mustache.js"></script>
-    <script src="./js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"

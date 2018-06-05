@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Chat | Node chat app</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            Node Chat App
+        </h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>
+                    Chat Room : 
+                </h4>
+                <div id="divOnline" class="form-control border border-primary" style="height: 500px; width: 70%">
+                    <strong class="text-primary">Online users</strong>
+                    <ol id="users"></ol>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h4>
+                    Chat window
+                </h4>
+                <hr>
+                <div id="divChtScrn" class="form-control border border-primary" style="overflow-y:scroll;height: 350px;">
+                    <ul id="messages"></ul>
+                </div>
+                <hr>
+                <form id="msg-box">
+                    <textarea if="message" autofocus autocomplete="off" name="message" type="text" placeholder="Message" class="form-control border border-primary"></textarea>
+                    <br>
+                    <button class="btn btn-outline-primary">Send</button>
+                    <button id="geo-location" class="btn btn-outline-primary">Send Location</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script id="msgTemplate" type="text/template">
+        <li class="message">
+            <div class="message__title">
+                <strong>{{from}}</strong>
+                <em>{{createdAt}}</em>
+            </div>
+            <div class="message__body">
+                <p>{{msg}}</p>
+            </div>
+        </li>
+    </script>
+    <script id="locationmsgTemplate" type="text/template">
+        <li class="message">
+            <div class="message__title">
+                    <strong>{{from}}</strong>
+                    <em>{{createdAt}}</em>
+            </div>
+            <div class="message__body">
+                <p>
+                    <a href="{{url}}" target="_blank"><i class="fa fa-map-marker" style="font-size:36px"></i>My Current Location</a>
+                </p>
+            </div>
+        </li>
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/libs/jquery-3.3.1.js"></script>
+    <script src="./js/libs/moment.js"></script>
+    <script src="./js/libs/mustache.js"></script>
+    <script src="./js/chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

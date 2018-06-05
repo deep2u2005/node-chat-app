@@ -1,3 +1,23 @@
 ul {
     list-style-type: none;
   }
+  .index-headning{
+   text-align: center; 
+   color: wheat
+  }
+.index-body{
+  background: #007BFF;
+}
+  .index-container{
+    padding-top: 100px;
+   
+  }
+  .row.justify-content-md-center div.col-md-4{
+    background-color: lightgray;
+    height: 350px;
+    border: #000035;
+    border-width: 10em;
+    border-style: solid;
+    border-radius: 1em;  
+    box-shadow: 2px 2px blue;
+  }
