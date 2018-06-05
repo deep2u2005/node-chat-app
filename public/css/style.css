@@ -1,9 +1,9 @@
 ul {
     list-style-type: none;
   }
-  .index-headning{
+  .index-heading, .tech-heading{
    text-align: center; 
-   color: wheat
+   color: black
   }
 /* .index-body{
   background: #007BFF;
@@ -19,14 +19,14 @@ ul {
     border-width: 10em;
     border-style: solid;
     border-radius: 1em;  
-    box-shadow: 2px 2px blue;
+    box-shadow: 3px 3px #007BFF;
   }
 #divOnline, #divChtScrn {
   background-color: #EFF5D3;
 }
 body{
-  /* background-image: url('./../img/background-city.jpg'); */
-  background-image: url('./../img/background-WC.jpg');
+  background-image: url('./../img/background-city.jpg');
+  /* background-image: url('./../img/background-WC.jpg'); */
   opacity: 70;
 }
 .message{
@@ -36,3 +36,8 @@ body{
   border-radius: .3em;
 }
  /* https://www.planwallpaper.com/static/images/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg */
+
+ h5.text-warning.text-block, div.well#users{
+  text-align: left;
+ }
+  
