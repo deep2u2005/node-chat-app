@@ -21,26 +21,26 @@
         <div class="row">
             <div class="col-md-4">
                 <h4>
-                    Chat Room : 
+                    Chat Room :
                 </h4>
                 <div id="divOnline" class="form-control border border-primary" style="height: 500px; width: 70%">
                     <strong class="text-primary">Online users</strong>
-                    <ol id="users"></ol>
+                    <div id="users"></div>
                 </div>
             </div>
             <div class="col-md-8">
                 <h4>
                     Chat window
                 </h4>
-                <hr>
+             
                 <div id="divChtScrn" class="form-control border border-primary" style="overflow-y:scroll;height: 350px;">
                     <ul id="messages"></ul>
                 </div>
-                <hr>
+               
                 <form id="msg-box">
                     <textarea if="message" autofocus autocomplete="off" name="message" type="text" placeholder="Message" class="form-control border border-primary"></textarea>
                     <br>
-                    <button class="btn btn-outline-primary">Send</button>
+                    <button id="btnMsg" class="btn btn-outline-primary">Send</button>
                     <button id="geo-location" class="btn btn-outline-primary">Send Location</button>
                 </form>
             </div>
@@ -74,6 +74,7 @@
     <script src="./js/libs/jquery-3.3.1.js"></script>
     <script src="./js/libs/moment.js"></script>
     <script src="./js/libs/mustache.js"></script>
+    <script src="./js/libs/deparam.js"></script>
     <script src="./js/chat.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
